@@ -18,7 +18,7 @@ export const useTranslator = () => {
 
   useEffect(() => {
     const translate = () => setOutputText(textToMorse(inputText));
-    const timeoutId = setTimeout(translate, 300);
+    const timeoutId = setTimeout(translate, TRANSLATION_DEBOUNCE_DELAY);
     return () => clearTimeout(timeoutId);
   }, [inputText]);
 
