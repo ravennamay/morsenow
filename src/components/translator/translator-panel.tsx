@@ -5,8 +5,11 @@ import { Card } from "@/components/ui/card";
 import { Copy, Volume2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TranslatorCardProps } from "@/types";
+import { useLanguage } from "@/context/language-context";
 
 export const TranslatorPanel = (props: TranslatorCardProps) => {
+  const { t } = useLanguage();
+
   return (
     <Card
       className={cn(
@@ -36,7 +39,7 @@ export const TranslatorPanel = (props: TranslatorCardProps) => {
             disabled={!props.text}
             onClick={props.actions.handleSpeak}
             className="hover:bg-primary/10 hover:text-primary transition-colors"
-            title={props.disabled ? "Play morse code" : "Speak text"}
+            title={props.disabled ? t("playMorse") : t("speakText")}
           >
             <Volume2 className="h-5 w-5" />
           </Button>
@@ -47,14 +50,14 @@ export const TranslatorPanel = (props: TranslatorCardProps) => {
             disabled={!props.text}
             onClick={props.actions.handleCopy}
             className="hover:bg-primary/10 hover:text-primary transition-colors"
-            title="Copy to clipboard"
+            title={t("copy")}
           >
             <Copy className="h-5 w-5" />
           </Button>
         </div>
 
         <span className="text-sm font-medium text-muted-foreground">
-          {props.text.length} <span className="text-xs">chars</span>
+          {props.text.length} <span className="text-xs">{t("chars")}</span>
         </span>
       </div>
     </Card>
