@@ -15,6 +15,8 @@ export type TranslatorCardProps = {
   text: string;
   disabled: boolean;
   placeholder: string;
+  mode: "textToMorse" | "morseToText";
+  panelType: "input" | "output";
   actions: TranslatorActions;
 };
 
