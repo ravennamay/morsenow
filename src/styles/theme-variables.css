@@ -1,0 +1,99 @@
+/* Light Mode Theme Variables */
+:root {
+  /* Background & Foreground */
+  --background: 0 0% 99%;
+  --foreground: 240 10% 3.9%;
+
+  /* Card */
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+
+  /* Popover */
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+
+  /* Primary - Cyan/Teal */
+  --primary: 188 100% 45%;
+  --primary-foreground: 0 0% 100%;
+
+  /* Secondary - Warm Amber */
+  --secondary: 45 100% 55%;
+  --secondary-foreground: 240 10% 3.9%;
+
+  /* Muted */
+  --muted: 240 5% 84.9%;
+  --muted-foreground: 240 5% 48%;
+
+  /* Accent - Cyan */
+  --accent: 188 100% 45%;
+  --accent-foreground: 0 0% 100%;
+
+  /* Destructive */
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+
+  /* Border & Input */
+  --border: 240 5% 89.8%;
+  --input: 240 5% 94%;
+  --ring: 188 100% 45%;
+
+  /* Radius */
+  --radius: 0.75rem;
+
+  /* Chart Colors */
+  --chart-1: 188 100% 45%;
+  --chart-2: 45 100% 55%;
+  --chart-3: 260 80% 50%;
+  --chart-4: 120 70% 50%;
+  --chart-5: 0 84% 60%;
+}
+
+/* Dark Mode Theme Variables */
+.dark {
+  /* Background - Deep Indigo Gradient */
+  --background: 220 30% 8%;
+  --foreground: 0 0% 98%;
+
+  /* Card - Semi-transparent with glassmorphism */
+  --card: 220 30% 12%;
+  --card-foreground: 0 0% 98%;
+
+  /* Popover */
+  --popover: 220 30% 12%;
+  --popover-foreground: 0 0% 98%;
+
+  /* Primary - Bright Cyan */
+  --primary: 188 100% 50%;
+  --primary-foreground: 220 30% 8%;
+
+  /* Secondary - Golden Amber */
+  --secondary: 45 100% 60%;
+  --secondary-foreground: 220 30% 8%;
+
+  /* Muted */
+  --muted: 220 15% 25%;
+  --muted-foreground: 220 10% 68%;
+
+  /* Accent - Cyan */
+  --accent: 188 100% 50%;
+  --accent-foreground: 220 30% 8%;
+
+  /* Destructive */
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+
+  /* Border & Input */
+  --border: 220 20% 20%;
+  --input: 220 20% 18%;
+  --ring: 188 100% 50%;
+
+  /* Radius */
+  --radius: 0.75rem;
+
+  /* Chart Colors */
+  --chart-1: 188 100% 50%;
+  --chart-2: 45 100% 60%;
+  --chart-3: 260 80% 60%;
+  --chart-4: 120 70% 60%;
+  --chart-5: 0 84% 65%;
+}
