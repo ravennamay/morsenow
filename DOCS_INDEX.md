@@ -4,6 +4,17 @@ Quick reference to all documentation files in the project.
 
 ---
 
+## ⚡ **QUICK START**
+
+### Need a quick answer on repository naming?
+**→ [NAMING_QUICK_REFERENCE.md](./NAMING_QUICK_REFERENCE.md)** (TL;DR version)
+
+**Ideal name:** `morse-translator` ✅
+
+---
+
+---
+
 ## 🏠 Root Documentation
 
 ### [GITHUB_REPOSITORY_SETUP.md](./GITHUB_REPOSITORY_SETUP.md) 🏆 **SETUP GUIDE**
