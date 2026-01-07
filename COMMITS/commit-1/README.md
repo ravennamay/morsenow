@@ -1,7 +1,16 @@
 # Commit 1: Initial Project Setup and Boilerplate
 
 ## Overview
-Foundation of the SignalCode project. Sets up Next.js with TypeScript, basic layout structure, styling infrastructure, and Tailwind CSS configuration.
+Foundation of **SignalCode** - a modern morse code translator. Sets up Next.js with TypeScript, basic layout structure, styling infrastructure, and Tailwind CSS configuration.
+
+### What is SignalCode?
+SignalCode is an instant morse code translator with real-time conversion, audio playback, and support for bidirectional translation (Text ↔ Morse). It features a modern minimalist design with dark/light themes, multi-language support (English & Portuguese), and full accessibility compliance.
+
+**Morse Code Support:**
+- ✅ Letters (A-Z), Numbers (0-9), Common punctuation
+- ✅ Audio playback (600Hz sine wave)
+- ✅ Bidirectional conversion
+- ❌ Accented characters (á, é, ç, ñ, etc.) - See [MORSE_RULES.md](../../MORSE_RULES.md)
 
 ## What's Implemented
 
@@ -66,6 +75,15 @@ Foundation of the SignalCode project. Sets up Next.js with TypeScript, basic lay
 - ❌ Top navigation header
 - ❌ Bidirectional translation
 - ❌ Translation logic
+
+## Morse Code Information
+
+For detailed information about morse code rules, supported characters, and limitations (especially regarding accented characters), see [MORSE_RULES.md](../../MORSE_RULES.md) in the root directory.
+
+**Quick Reference:**
+- **Supported:** A-Z, 0-9, `.`, `,`, `?`, `'`, `!`, `/`, `(`, `)`, `&`, `:`, `;`, `=`, `+`, `-`, `_`, `"`, `$`, `@`
+- **Not Supported:** Accents (á, é, ç, ñ, etc.), emoji, special unicode characters
+- **Spaces:** Represented as `/` in morse code
 
 ## Getting Started
 
