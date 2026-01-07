@@ -2,6 +2,8 @@
 
 **TL;DR:** Use `morse-translator` for GitHub repos. It's clear, professional, and follows conventions.
 
+**Need more details?** → [Full Documentation Index](./DOCS_INDEX.md)
+
 ---
 
 ## 🏆 The Winner
