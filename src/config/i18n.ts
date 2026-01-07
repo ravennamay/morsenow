@@ -2,9 +2,9 @@ export type Language = "pt-BR" | "en-US";
 
 export const translations = {
   "pt-BR": {
-    title: "SignalCode",
-    description: "Transforme texto em código morse instantaneamente",
-    tagline: "Digitar, traduzir e reproduzir.",
+    title: "Morse Code Translator",
+    description: "Converta texto em código morse instantaneamente",
+    tagline: "Digite, traduza e reproduza.",
     textInput: "Entrada de Texto",
     morseCode: "Código Morse",
     textToMorse: "Texto para Morse",
