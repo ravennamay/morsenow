@@ -27,4 +27,4 @@ export type Toast = {
   onOpenChange?: (open: boolean) => void;
 };
 
-export type ToastActionElement = React.ReactElement<any>;
+export type ToastActionElement = React.ReactElement<Record<string, unknown>>;
