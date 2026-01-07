@@ -54,6 +54,8 @@ export const translations = {
     speakText: "Speak text",
     copyText: "Copy to clipboard",
     copyMorse: "Copy morse to clipboard",
+    footerText: "Built by",
+    footerLink: "Rwbe",
   },
 } as const;
 
