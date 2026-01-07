@@ -17,10 +17,10 @@ export const ThemeToggle = () => {
       size="icon"
       variant="ghost"
       onClick={toggleTheme}
-      className="fixed bottom-4 right-4 rounded-3xl border bg-gray-100 shadow-xl dark:bg-neutral-950/30"
+      className="rounded-lg border border-border/40 bg-background hover:bg-accent transition-colors"
     >
-      <SunIcon className="hidden [html.dark_&]:block" />
-      <MoonIcon className="hidden [html.light_&]:block" />
+      <SunIcon className="hidden [html.dark_&]:block h-5 w-5" />
+      <MoonIcon className="hidden [html.light_&]:block h-5 w-5" />
     </Button>
   );
 };
