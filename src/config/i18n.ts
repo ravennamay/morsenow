@@ -2,9 +2,9 @@ export type Language = "pt-BR" | "en-US";
 
 export const translations = {
   "pt-BR": {
-    title: "SignalCode",
-    description: "Transforme texto em código morse instantaneamente",
-    tagline: "Digitar, traduzir e reproduzir.",
+    title: "Morse Code Translator",
+    description: "Converta texto em código morse instantaneamente",
+    tagline: "Digite, traduza e reproduza.",
     textInput: "Entrada de Texto",
     morseCode: "Código Morse",
     textToMorse: "Texto para Morse",
@@ -26,10 +26,12 @@ export const translations = {
     speakText: "Reproduzir texto",
     copyText: "Copiar para área de transferência",
     copyMorse: "Copiar morse para área de transferência",
+    footerText: "Desenvolvido por",
+    footerLink: "Rwbe",
   },
   "en-US": {
-    title: "SignalCode",
-    description: "Transform text to morse code instantly",
+    title: "Morse Code Translator",
+    description: "Convert text to morse code instantly",
     tagline: "Type, translate, and play.",
     textInput: "Text Input",
     morseCode: "Morse Code",
@@ -52,6 +54,8 @@ export const translations = {
     speakText: "Speak text",
     copyText: "Copy to clipboard",
     copyMorse: "Copy morse to clipboard",
+    footerText: "Built by",
+    footerLink: "Rwbe",
   },
 } as const;
 
