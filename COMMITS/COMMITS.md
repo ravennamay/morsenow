@@ -3,6 +3,13 @@
 ## Overview
 This directory contains the complete development progression of the SignalCode project, showing how the application evolved from initial setup to a fully internationalized bidirectional morse code translator with theme support.
 
+## 📚 Project Documentation
+
+The project includes comprehensive documentation:
+- **[README.md](../README.md)** - Summarized, modern project overview
+- **[MORSE_RULES.md](../MORSE_RULES.md)** - Complete morse code rules and limitations (accented characters, supported symbols)
+- **[REPOSITORY_NAMES.md](../REPOSITORY_NAMES.md)** - 15+ alternative repository names and descriptions
+
 ---
 
 ## Commit 1: Initial Project Setup and Boilerplate
