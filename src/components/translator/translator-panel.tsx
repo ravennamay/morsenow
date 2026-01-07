@@ -10,6 +10,25 @@ import { useLanguage } from "@/context/language-context";
 export const TranslatorPanel = (props: TranslatorCardProps) => {
   const { t } = useLanguage();
 
+  // Determine button titles based on mode and panel type
+  const getPlayTitle = (): string => {
+    if (props.panelType === "input") {
+      // Input panel
+      if (props.mode === "textToMorse") {
+        return t("speakText"); // Playing text
+      } else {
+        return t("playMorse"); // Playing morse
+      }
+    } else {
+      // Output panel
+      if (props.mode === "textToMorse") {
+        return t("playMorse"); // Output is morse
+      } else {
+        return t("speakText"); // Output is text
+      }
+    }
+  };
+
   return (
     <Card
       className={cn(
@@ -39,7 +58,7 @@ export const TranslatorPanel = (props: TranslatorCardProps) => {
             disabled={!props.text}
             onClick={props.actions.handleSpeak}
             className="hover:bg-primary/10 hover:text-primary transition-colors"
-            title={props.disabled ? t("playMorse") : t("speakText")}
+            title={getPlayTitle()}
           >
             <Volume2 className="h-5 w-5" />
           </Button>
