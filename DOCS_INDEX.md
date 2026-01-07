@@ -7,11 +7,13 @@ Quick reference to all documentation files in the project.
 ## ⚡ **QUICK START**
 
 ### Need a quick answer on repository naming?
-**→ [NAMING_QUICK_REFERENCE.md](./NAMING_QUICK_REFERENCE.md)** (TL;DR version, 2-minute read)
-
-**→ [GITHUB_NAMING_STATUS.md](./GITHUB_NAMING_STATUS.md)** (Status report, what was done)
 
 **Ideal name:** `morse-translator` ✅
+
+**Quick references:**
+- **[NAMING_QUICK_REFERENCE.md](./NAMING_QUICK_REFERENCE.md)** - 2-minute TL;DR
+- **[FINAL_SUMMARY_GITHUB_NAMING.md](./FINAL_SUMMARY_GITHUB_NAMING.md)** - What was delivered
+- **[GITHUB_NAMING_STATUS.md](./GITHUB_NAMING_STATUS.md)** - Status report & metrics
 
 ---
 
