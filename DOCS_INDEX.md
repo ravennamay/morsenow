@@ -6,6 +6,23 @@ Quick reference to all documentation files in the project.
 
 ## 🏠 Root Documentation
 
+### [GITHUB_REPOSITORY_SETUP.md](./GITHUB_REPOSITORY_SETUP.md) 🏆 **SETUP GUIDE**
+**Complete GitHub repository setup guide** (303 lines)
+
+What's inside:
+- **Ideal choice:** `morse-translator` (recommended)
+- Why this name is perfect for GitHub
+- Complete repository configuration
+- Code updates needed
+- Implementation checklist
+- Domain setup
+- SEO impact analysis
+- Pre/post-launch checklist
+
+**Best for:** Setting up your GitHub repository, understanding why `morse-translator` is ideal, implementation guidance
+
+---
+
 ### [README.md](./README.md) ⭐ **START HERE**
 **Concise project overview** (114 lines, 2-minute read)
 
