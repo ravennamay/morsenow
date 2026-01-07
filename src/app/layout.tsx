@@ -2,11 +2,11 @@ import "@/styles/globals.css";
 import { Metadata } from "next";
 import { PropsWithChildren } from "react";
 import { siteConfig } from "@/config/site";
-import { Bricolage_Grotesque } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import { Providers } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
 
-const font = Bricolage_Grotesque({ subsets: ["latin"] });
+const font = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
   title: siteConfig.name,
