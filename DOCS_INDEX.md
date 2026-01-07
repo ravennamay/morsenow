@@ -19,6 +19,35 @@ Quick reference to all documentation files in the project.
 
 ## 🏠 Root Documentation
 
+### [NAMING_QUICK_REFERENCE.md](./NAMING_QUICK_REFERENCE.md) ⚡ **QUICK REFERENCE**
+**Quick 2-minute reference for naming decision** (177 lines)
+
+What's inside:
+- The ideal choice: `morse-translator`
+- Quick comparisons
+- Decision tree
+- 3-step implementation
+- Implementation checklist
+
+**Best for:** Getting quick answer, making decision, simple overview
+
+---
+
+### [GITHUB_NAMING_STATUS.md](./GITHUB_NAMING_STATUS.md) ✅ **STATUS REPORT**
+**Complete status of naming documentation restructure** (287 lines)
+
+What's inside:
+- What was done (3 new files, 4 updated files)
+- Completion status and statistics
+- The ideal choice and why
+- Implementation readiness
+- Quality verification
+- Quick links to all resources
+
+**Best for:** Understanding what changed, overview of documentation, navigation hub
+
+---
+
 ### [GITHUB_REPOSITORY_SETUP.md](./GITHUB_REPOSITORY_SETUP.md) 🏆 **SETUP GUIDE**
 **Complete GitHub repository setup guide** (303 lines)
 
