@@ -41,20 +41,23 @@ What's inside:
 ---
 
 ### [REPOSITORY_NAMES.md](./REPOSITORY_NAMES.md) 💡 **NAMING IDEAS**
-**15+ alternative repository names and descriptions** (178 lines)
+**GitHub-style and brand naming suggestions** (352 lines)
 
 What's inside:
-- Current name (SignalCode) description
-- 15 alternative names:
+- **🏆 IDEAL:** `morse-translator` (GitHub standard, recommended)
+- 8 GitHub-style alternatives:
+  - `morse-code`, `text-to-morse`, `morse-converter`
+  - `morse-io`, `morse-now`, `ascii-morse`, `morseCode`
+- 15+ brand name alternatives:
   - MorseFlow, DotDash, CodeSignal, MorsePress, TapCode
   - SignalBox, MorseMaker, AudioMorse, FrequencyCode
   - PulseCode, MorseHub, CyberSignal, DitDah, SoundCode, MorseStudio
 - Multiple description styles for each audience
-- Comparison matrix (memorability, professionalism, etc.)
-- Implementation checklist if changing names
-- Final recommendation
+- Comparison matrices (GitHub vs Brand names)
+- Implementation checklists
+- SEO potential analysis
 
-**Best for:** Branding decisions, choosing project name, marketing copy
+**Best for:** Repository naming decisions, GitHub setup, branding, marketing copy
 
 ---
 
