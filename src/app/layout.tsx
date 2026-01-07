@@ -4,7 +4,6 @@ import { PropsWithChildren } from "react";
 import { siteConfig } from "@/config/site";
 import { Inter } from "next/font/google";
 import { Providers } from "@/components/theme-provider";
-import { TopBar } from "@/components/layout/top-bar";
 
 const font = Inter({ subsets: ["latin"] });
 
@@ -21,10 +20,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" className={font.className} suppressHydrationWarning>
       <body>
-        <Providers>
-          <TopBar />
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
