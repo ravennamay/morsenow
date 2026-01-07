@@ -1,4 +1,4 @@
-# SignalCode
+# Morse Code Translator
 
 Transform text to morse code instantly with a modern, minimalist interface.
 
