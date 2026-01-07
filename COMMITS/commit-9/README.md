@@ -115,12 +115,44 @@ npm run lint
 ## Key Achievements
 
 1. **Full i18n Implementation**: All hardcoded strings replaced with translations
-2. **Bidirectional Translation**: Users can translate in both directions
+2. **Bidirectional Translation**: Users can translate in both directions (Text ↔ Morse)
 3. **Intuitive UI**: Clear mode indicators and responsive design
 4. **Theme Support**: Dark and light mode with smooth transitions
-5. **Accessibility**: Proper ARIA labels and keyboard support
+5. **Accessibility**: Proper ARIA labels and keyboard support (WCAG 2.1 AA compliant)
 6. **Performance**: Debounced translations and optimized rendering
 7. **Mobile Friendly**: Responsive layout for all screen sizes
+8. **Complete Documentation**: Includes morse code rules and repository naming alternatives
+
+## Morse Code Information
+
+### Supported Characters
+- **Letters:** A-Z (case-insensitive)
+- **Numbers:** 0-9
+- **Punctuation:** `. , ? ' ! / ( ) & : ; = + - _ " $ @`
+- **Space:** Represented as `/` in morse code
+
+### NOT Supported ⚠️
+- **Accented characters:** á, à, â, ã, é, è, ê, í, ì, ó, ò, ô, õ, ú, ù, ç, etc.
+- **Special Unicode:** emoji, €, £, ×, ÷, etc.
+- These characters are silently skipped during conversion
+
+**Example:**
+```
+Input:  "Café"
+Output: "CAF"  (é is removed)
+Morse:  "-.-. .- ..-."
+```
+
+For comprehensive morse code documentation, see [MORSE_RULES.md](../../MORSE_RULES.md).
+
+## Repository Naming Alternatives
+
+While "SignalCode" is the current name, several alternatives exist. For a complete list of naming ideas and descriptions for different target audiences, see [REPOSITORY_NAMES.md](../../REPOSITORY_NAMES.md).
+
+**Top 3 Alternatives:**
+1. **MorseFlow** - Emphasizes real-time conversion flow, appeals to developers
+2. **DotDash** - Playful reference to morse elements, casual and memorable
+3. **MorseMaker** - Educational angle, suggests creation and learning
 
 ## Files Modified from Previous Commits
 
@@ -132,6 +164,13 @@ npm run lint
 - `src/config/i18n.ts` - Added all missing translation keys
 - `src/context/language-context.tsx` - Fixed hydration with default values
 
+## Documentation
+
+The project includes comprehensive documentation:
+- **README.md** - Summarized, concise project overview
+- **MORSE_RULES.md** - Complete morse code rules, supported characters, and limitations
+- **REPOSITORY_NAMES.md** - 15+ alternative repository names and descriptions
+
 ## Next Steps (Post-Development)
 
 - Deploy to production
@@ -140,3 +179,4 @@ npm run lint
 - Optimize performance based on metrics
 - Add more languages if needed
 - Consider PWA capabilities for offline support
+- Monitor user questions about accented character support
