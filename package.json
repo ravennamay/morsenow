@@ -1,9 +1,10 @@
 {
-  "name": "morsenow",
-  "version": "0.1.0",
+  "name": "signal-code",
+  "version": "1.0.0",
+  "description": "Transform text to morse code instantly",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -15,11 +16,11 @@
     "@radix-ui/react-toast": "^1.2.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.459.0",
-    "next": "15.0.3",
+    "lucide-react": "^0.468.0",
+    "next": "^15.1.0",
     "next-themes": "^0.4.3",
-    "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7"
   },
@@ -27,16 +28,16 @@
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@types/node": "^20.17.6",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
     "eslint": "^9.14.0",
-    "eslint-config-next": "15.0.3",
+    "eslint-config-next": "^15.1.0",
     "husky": "^9.1.6",
     "postcss": "^8.4.49",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
     "pretty-quick": "^4.0.0",
     "tailwindcss": "^3.4.15",
-    "typescript": "^5.6.3"
+    "typescript": "^5.7.2"
   }
 }

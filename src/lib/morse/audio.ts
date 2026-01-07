@@ -1,18 +1,3 @@
-import { MORSE_CODE } from "@/morse";
-
-export const textToMorse = (text: string): string => {
-  return text
-    .toUpperCase()
-    .split("")
-    .map((char) => MORSE_CODE[char] || char)
-    .join(" ");
-};
-
-export const speakText = (text: string) => {
-  const utterance = new SpeechSynthesisUtterance(text);
-  window.speechSynthesis.speak(utterance);
-};
-
 export const playMorseCode = (morse: string) => {
   const context = new AudioContext();
   const DOT_DURATION = 0.06;
