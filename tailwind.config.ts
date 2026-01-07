@@ -52,6 +52,24 @@ export default {
           "5": "hsl(var(--chart-5))",
         },
       },
+      boxShadow: {
+        "sm-primary": "0 1px 3px 0 hsl(var(--primary) / 0.1)",
+        "md-primary": "0 4px 6px 0 hsl(var(--primary) / 0.1)",
+      },
+      animation: {
+        "fade-in": "fadeIn 0.3s ease-in-out",
+        "slide-up": "slideUp 0.3s ease-out",
+      },
+      keyframes: {
+        fadeIn: {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        slideUp: {
+          from: { transform: "translateY(10px)", opacity: "0" },
+          to: { transform: "translateY(0)", opacity: "1" },
+        },
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
