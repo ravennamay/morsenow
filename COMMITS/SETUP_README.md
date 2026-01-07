@@ -146,6 +146,18 @@ Each commit folder contains:
 - ✅ All configuration files
 - ✅ `DEVELOPMENT_GUIDE.md` - Development notes
 
+## 📚 Additional Documentation Files
+
+The project root includes comprehensive documentation:
+- **`README.md`** - Summarized project overview (updated and concise)
+- **`MORSE_RULES.md`** - Complete morse code rules, supported characters, and limitations
+  - Explains accented character handling
+  - Lists supported punctuation
+  - Details bidirectional conversion rules
+- **`REPOSITORY_NAMES.md`** - 15+ alternative repository names and descriptions
+  - Different naming themes for various audiences
+  - Comparison matrix of alternatives
+
 ## Troubleshooting
 
 ### Dependencies Already Locked
