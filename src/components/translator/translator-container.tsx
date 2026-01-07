@@ -17,9 +17,14 @@ export const TranslatorContainer = () => {
   const outputPlaceholder = isTextToMorse ? t("morseOutput") : t("textOutput");
 
   return (
-    <div className="flex flex-col gap-8">
-      {/* Desktop layout with direction toggle in between */}
-      <div className="hidden md:grid grid-cols-[1fr_auto_1fr] gap-6 items-start flex-1">
+    <div className="flex flex-col gap-6">
+      {/* Direction Toggle - Top Center */}
+      <div className="flex justify-center">
+        <DirectionToggle mode={states.mode} onToggle={actions.toggleMode} />
+      </div>
+
+      {/* Desktop layout - Side by side */}
+      <div className="hidden md:grid grid-cols-2 gap-6 flex-1">
         {/* Input Panel */}
         <div className="space-y-2">
           <label className="text-sm font-semibold text-foreground">{inputLabel}</label>
@@ -35,11 +40,6 @@ export const TranslatorContainer = () => {
               handleSpeak: () => actions.handleSpeak("input"),
             }}
           />
-        </div>
-
-        {/* Direction Toggle */}
-        <div className="flex items-center justify-center h-full pt-8">
-          <DirectionToggle mode={states.mode} onToggle={actions.toggleMode} />
         </div>
 
         {/* Output Panel */}
@@ -76,10 +76,6 @@ export const TranslatorContainer = () => {
               handleSpeak: () => actions.handleSpeak("input"),
             }}
           />
-        </div>
-
-        <div className="flex justify-center">
-          <DirectionToggle mode={states.mode} onToggle={actions.toggleMode} />
         </div>
 
         <div className="space-y-2">
