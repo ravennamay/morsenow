@@ -1,6 +1,9 @@
 import { toast } from "./use-toast";
 import { ChangeEvent, useEffect, useState } from "react";
-import { playMorseCode, speakText, textToMorse } from "@/lib/translator";
+import { textToMorse } from "@/lib/morse/converter";
+import { playMorseCode } from "@/lib/morse/audio";
+import { speakText } from "@/lib/speech";
+import { TRANSLATION_DEBOUNCE_DELAY } from "@/config/constants";
 
 type ModeType = "input" | "output";
 
