@@ -11,6 +11,13 @@ type LanguageContextType = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+// Default context value for SSR/initial render
+const defaultContextValue: LanguageContextType = {
+  language: defaultLanguage,
+  setLanguage: () => {},
+  t: (key: keyof (typeof translations)["pt-BR"]) => key,
+};
+
 export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
   const [language, setLanguageState] = useState<Language>(defaultLanguage);
   const [mounted, setMounted] = useState(false);
@@ -33,13 +40,14 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
     return translations[language][key] || key;
   };
 
-  // Prevent hydration mismatch by not rendering until mounted
-  if (!mounted) {
-    return <>{children}</>;
-  }
+  const contextValue: LanguageContextType = {
+    language,
+    setLanguage,
+    t,
+  };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={contextValue}>
       {children}
     </LanguageContext.Provider>
   );
@@ -47,8 +55,9 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
 
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
+  // Return default value if context is not available (for SSR)
   if (!context) {
-    throw new Error("useLanguage must be used within LanguageProvider");
+    return defaultContextValue;
   }
   return context;
 };
