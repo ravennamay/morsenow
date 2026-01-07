@@ -14,6 +14,7 @@ Quick reference to all documentation files in the project.
 - **[NAMING_QUICK_REFERENCE.md](./NAMING_QUICK_REFERENCE.md)** - 2-minute TL;DR
 - **[FINAL_SUMMARY_GITHUB_NAMING.md](./FINAL_SUMMARY_GITHUB_NAMING.md)** - What was delivered
 - **[GITHUB_NAMING_STATUS.md](./GITHUB_NAMING_STATUS.md)** - Status report & metrics
+- **[DOCUMENTATION_STRUCTURE_DIAGRAM.md](./DOCUMENTATION_STRUCTURE_DIAGRAM.md)** - Visual map of all docs
 
 ---
 
