@@ -57,6 +57,40 @@ What's inside:
 
 ---
 
+### [REPOSITORY_NAMING_SUMMARY.md](./REPOSITORY_NAMING_SUMMARY.md) 📋 **NAMING SUMMARY**
+**Overview of naming restructure and ideal recommendation** (356 lines)
+
+What's inside:
+- What changed in the naming structure
+- **The ideal choice: `morse-translator`**
+- Why it's perfect for GitHub
+- Complete list of 8 GitHub-style names
+- Comparison table
+- Implementation steps
+- Navigation guide
+- Before/after breakdown
+
+**Best for:** Quick understanding of naming decision, overview of changes, implementation guidance
+
+---
+
+### [GITHUB_REPOSITORY_SETUP.md](./GITHUB_REPOSITORY_SETUP.md) 🏆 **SETUP GUIDE**
+**Complete GitHub repository setup checklist** (303 lines)
+
+What's inside:
+- Why `morse-translator` is ideal
+- Repository configuration checklist
+- Code files to update
+- Implementation steps
+- Domain recommendations
+- SEO impact analysis
+- Pre/post-launch checklist
+- Alternative backup names
+
+**Best for:** Actual implementation, step-by-step guidance, technical setup
+
+---
+
 ### [REPOSITORY_NAMES.md](./REPOSITORY_NAMES.md) 💡 **NAMING IDEAS**
 **GitHub-style and brand naming suggestions** (352 lines)
 
