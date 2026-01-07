@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
+export const dynamic = "force-dynamic";
+
 export default function NotFoundPage() {
   return (
     <main className="flex h-svh flex-col items-center justify-center gap-5">
