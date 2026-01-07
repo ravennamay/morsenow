@@ -1,0 +1,22 @@
+Files Created/Added in Commit 2: Theme System Implementation
+
+NEW FILE:
++ src/components/theme-toggle.tsx
+
+MODIFIED FILES:
+~ src/components/theme-provider.tsx (wrap with ThemeProvider)
+~ src/app/layout.tsx (add ThemeToggle)
+~ src/styles/theme-variables.css (add dark theme colors)
+~ package.json (add next-themes dependency)
+
+Description:
+This commit adds dark/light theme support using next-themes library.
+A ThemeToggle button is added to the layout (positioned fixed bottom-right).
+CSS variables are extended with dark mode colors.
+
+To setup this commit:
+1. Copy all files from commit-1
+2. Add src/components/theme-toggle.tsx
+3. Modify the 4 files listed above
+4. Run: npm install && npm run dev
+5. Verify: Theme toggle appears in bottom-right, clicking toggles theme

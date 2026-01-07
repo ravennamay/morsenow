@@ -4,7 +4,7 @@ import { PropsWithChildren } from "react";
 import { siteConfig } from "@/config/site";
 import { Inter } from "next/font/google";
 import { Providers } from "@/components/theme-provider";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { TopBar } from "@/components/layout/top-bar";
 
 const font = Inter({ subsets: ["latin"] });
 
@@ -22,8 +22,8 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <html lang="en" className={font.className} suppressHydrationWarning>
       <body>
         <Providers>
+          <TopBar />
           {children}
-          <ThemeToggle />
         </Providers>
       </body>
     </html>

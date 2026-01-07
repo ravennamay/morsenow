@@ -23,6 +23,9 @@ export const translations = {
     playMorse: "Reproduzir morse",
     playText: "Reproduzir texto",
     switchDirection: "Inverter direção",
+    speakText: "Reproduzir texto",
+    copyText: "Copiar para área de transferência",
+    copyMorse: "Copiar morse para área de transferência",
   },
   "en-US": {
     title: "SignalCode",
@@ -46,6 +49,9 @@ export const translations = {
     playMorse: "Play morse",
     playText: "Play text",
     switchDirection: "Switch direction",
+    speakText: "Speak text",
+    copyText: "Copy to clipboard",
+    copyMorse: "Copy morse to clipboard",
   },
 } as const;
 

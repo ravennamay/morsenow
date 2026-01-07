@@ -3,6 +3,7 @@
 import { Toaster } from "./ui/toaster";
 import { PropsWithChildren } from "react";
 import { ThemeProvider, ThemeProviderProps } from "next-themes";
+import { LanguageProvider } from "@/context/language-context";
 
 const themeProps: ThemeProviderProps = {
   enableSystem: true,
@@ -13,8 +14,10 @@ const themeProps: ThemeProviderProps = {
 export const Providers = ({ children }: PropsWithChildren) => {
   return (
     <ThemeProvider {...themeProps}>
-      {children}
-      <Toaster />
+      <LanguageProvider>
+        {children}
+        <Toaster />
+      </LanguageProvider>
     </ThemeProvider>
   );
 };
