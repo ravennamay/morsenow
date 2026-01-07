@@ -4,15 +4,12 @@ import { textToMorse } from "@/lib/morse/converter";
 import { playMorseCode } from "@/lib/morse/audio";
 import { speakText } from "@/lib/speech";
 import { TRANSLATION_DEBOUNCE_DELAY } from "@/config/constants";
+import { useLanguage } from "@/context/language-context";
 
 type ModeType = "input" | "output";
 
-const toastTexts = {
-  text: "Text copied successfully!",
-  morse: "Morse code copied successfully!",
-};
-
 export const useTranslator = () => {
+  const { t } = useLanguage();
   const [inputText, setInputText] = useState("");
   const [outputText, setOutputText] = useState("");
 
@@ -31,7 +28,7 @@ export const useTranslator = () => {
     const text = isInput ? inputText : outputText;
     await navigator.clipboard.writeText(text);
 
-    const toastTitle = isInput ? toastTexts.text : toastTexts.morse;
+    const toastTitle = isInput ? t("textCopied") : t("morseCopied");
     toast({ variant: "success", title: toastTitle });
   };
 
