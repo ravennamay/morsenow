@@ -116,23 +116,6 @@ What's inside:
 
 ---
 
-### [GITHUB_REPOSITORY_SETUP.md](./GITHUB_REPOSITORY_SETUP.md) 🏆 **SETUP GUIDE**
-**Complete GitHub repository setup checklist** (303 lines)
-
-What's inside:
-- Why `morse-translator` is ideal
-- Repository configuration checklist
-- Code files to update
-- Implementation steps
-- Domain recommendations
-- SEO impact analysis
-- Pre/post-launch checklist
-- Alternative backup names
-
-**Best for:** Actual implementation, step-by-step guidance, technical setup
-
----
-
 ### [REPOSITORY_NAMES.md](./REPOSITORY_NAMES.md) 💡 **NAMING IDEAS**
 **GitHub-style and brand naming suggestions** (352 lines)
 
