@@ -1,30 +1,18 @@
 import "@/styles/globals.css";
 import { Metadata } from "next";
 import { PropsWithChildren } from "react";
-import { siteConfig } from "@/config/site";
-import { Inter } from "next/font/google";
 import { Providers } from "@/components/theme-provider";
-import { TopBar } from "@/components/layout/top-bar";
-
-const font = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: siteConfig.name,
-  robots: siteConfig.robots,
-  keywords: siteConfig.keywords,
-  description: siteConfig.description,
-  metadataBase: siteConfig.metadataBase,
-  applicationName: siteConfig.applicationName,
+  title: "Morse Code Translator",
+  description: "Convert text to morse code instantly",
 };
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en" className={font.className} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <Providers>
-          <TopBar />
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

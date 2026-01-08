@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback } from "react";
-import { Button } from "./ui/button";
 import { useTheme } from "next-themes";
 import { MoonIcon, SunIcon } from "lucide-react";
 
@@ -13,14 +12,12 @@ export const ThemeToggle = () => {
   }, [resolvedTheme, setTheme]);
 
   return (
-    <Button
-      size="icon"
-      variant="ghost"
+    <button
       onClick={toggleTheme}
-      className="rounded-lg border border-border/40 bg-background hover:bg-accent transition-colors"
+      className="inline-flex items-center justify-center h-9 w-9 rounded-lg border border-border/40 bg-background hover:bg-accent transition-colors"
     >
       <SunIcon className="hidden [html.dark_&]:block h-5 w-5" />
       <MoonIcon className="hidden [html.light_&]:block h-5 w-5" />
-    </Button>
+    </button>
   );
 };

@@ -1,6 +1,5 @@
 "use client";
 
-import { Toaster } from "./ui/toaster";
 import { PropsWithChildren } from "react";
 import { ThemeProvider, ThemeProviderProps } from "next-themes";
 
@@ -11,10 +10,5 @@ const themeProps: ThemeProviderProps = {
 };
 
 export const Providers = ({ children }: PropsWithChildren) => {
-  return (
-    <ThemeProvider {...themeProps}>
-      {children}
-      <Toaster />
-    </ThemeProvider>
-  );
+  return <ThemeProvider {...themeProps}>{children}</ThemeProvider>;
 };

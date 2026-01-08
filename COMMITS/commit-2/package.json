@@ -1,20 +1,15 @@
 {
   "name": "morse-translator",
   "version": "1.0.0",
-  "description": "Transform text to morse code instantly",
+  "description": "Convert text to morse code instantly",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "format": "prettier --write .",
-    "prepare": "husky"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^1.1.0",
-    "@radix-ui/react-toast": "^1.2.2",
-    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.468.0",
     "next": "^15.1.0",
@@ -31,8 +26,6 @@
     "eslint": "^9.14.0",
     "eslint-config-next": "^15.1.0",
     "postcss": "^8.4.49",
-    "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.8",
     "tailwindcss": "^3.4.15",
     "typescript": "^5.7.2"
   }
