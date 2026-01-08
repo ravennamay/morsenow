@@ -1,208 +1,123 @@
 #!/usr/bin/env python3
 """
-Setup script to populate COMMITS directories with project files from each commit stage.
-
-This script creates a progressive snapshot of the project development, 
-showing how it evolved from commit 1 (boilerplate) to commit 9 (fully featured).
-
-Usage:
-    python3 setup_commits.py
+Automatically copy and organize files for all 9 commits.
+Each commit is a complete, independent snapshot of the project.
 """
 
 import os
 import shutil
-import sys
 from pathlib import Path
 
-# Colors for output
-class Colors:
-    YELLOW = '\033[1;33m'
-    GREEN = '\033[0;32m'
-    RED = '\033[0;31m'
-    NC = '\033[0m'
+# Define the project root
+PROJECT_ROOT = Path(__file__).parent.parent
+COMMITS_DIR = PROJECT_ROOT / "COMMITS"
 
-def print_yellow(msg):
-    print(f"{Colors.YELLOW}{msg}{Colors.NC}")
+# Files to copy for each commit
+COMMITS_CONFIG = {
+    1: {
+        "copy_all_from": None,  # Base commit
+        "description": "Initial Boilerplate - All base files",
+    },
+    2: {
+        "copy_all_from": 1,
+        "description": "Theme System - Add theme-toggle, modify theme-provider",
+    },
+    3: {
+        "copy_all_from": 2,
+        "description": "i18n Infrastructure - Add i18n.ts and language-context",
+    },
+    4: {
+        "copy_all_from": 3,
+        "description": "Language Selector - Add language-selector component",
+    },
+    5: {
+        "copy_all_from": 4,
+        "description": "Header Restructuring - Add top-bar, integrate LanguageProvider",
+    },
+    6: {
+        "copy_all_from": 5,
+        "description": "Reverse Morse - Add reverse-converter.ts",
+    },
+    7: {
+        "copy_all_from": 6,
+        "description": "Direction Toggle - Add direction-toggle component",
+    },
+    8: {
+        "copy_all_from": 7,
+        "description": "Bidirectional UI - Modify container, panel, hook for bidirectional",
+    },
+    9: {
+        "copy_all_from": 8,
+        "description": "Full i18n Integration - Complete i18n across all components",
+    },
+}
 
-def print_green(msg):
-    print(f"{Colors.GREEN}{msg}{Colors.NC}")
-
-def print_red(msg):
-    print(f"{Colors.RED}{msg}{Colors.NC}")
-
-def create_directory_structure(commit_num):
-    """Create directory structure for a commit"""
-    base_path = Path(__file__).parent / f"commit-{commit_num}"
+def copy_src_files(from_commit: int, to_commit: int):
+    """Copy all src files from one commit to the next."""
+    from_src = COMMITS_DIR / f"commit-{from_commit}" / "src"
+    to_src = COMMITS_DIR / f"commit-{to_commit}" / "src"
     
-    directories = [
-        "src/app",
-        "src/components/ui",
-        "src/components/layout",
-        "src/components/translator",
-        "src/config",
-        "src/context",
-        "src/hooks",
-        "src/lib/morse",
-        "src/styles",
-        "src/types",
-    ]
-    
-    for directory in directories:
-        (base_path / directory).mkdir(parents=True, exist_ok=True)
+    if from_src.exists() and not to_src.exists():
+        shutil.copytree(from_src, to_src)
+        print(f"  ✓ Copied src/ from commit-{from_commit} to commit-{to_commit}")
+    elif from_src.exists():
+        # Merge if target exists (don't overwrite)
+        for item in from_src.rglob("*"):
+            if item.is_file():
+                rel_path = item.relative_to(from_src)
+                target = to_src / rel_path
+                target.parent.mkdir(parents=True, exist_ok=True)
+                if not target.exists():
+                    shutil.copy2(item, target)
 
-def copy_base_files(src_root, commit_num):
-    """Copy configuration files from main project"""
-    commit_path = Path(__file__).parent / f"commit-{commit_num}"
-    
+def copy_config_files(from_commit: int, to_commit: int):
+    """Copy all config files from one commit to the next."""
     config_files = [
-        "next.config.ts",
         "tsconfig.json",
-        "package.json",
         "tailwind.config.ts",
+        "next.config.ts",
         "postcss.config.mjs",
         "prettier.config.mjs",
         "components.json",
     ]
     
-    for file in config_files:
-        src_file = Path(src_root) / file
-        if src_file.exists():
-            shutil.copy2(src_file, commit_path / file)
-
-def copy_src_files(src_root, commit_num):
-    """Copy src directory files"""
-    src_path = Path(src_root) / "src"
-    commit_src_path = Path(__file__).parent / f"commit-{commit_num}" / "src"
+    from_dir = COMMITS_DIR / f"commit-{from_commit}"
+    to_dir = COMMITS_DIR / f"commit-{to_commit}"
     
-    if src_path.exists():
-        shutil.copytree(src_path, commit_src_path, dirs_exist_ok=True)
-
-def remove_files_for_commit(commit_num, files_to_remove):
-    """Remove files that shouldn't exist in a specific commit"""
-    commit_path = Path(__file__).parent / f"commit-{commit_num}"
-    
-    for file_path in files_to_remove:
-        full_path = commit_path / file_path
-        if full_path.exists():
-            if full_path.is_dir():
-                shutil.rmtree(full_path)
-            else:
-                full_path.unlink()
-
-def main():
-    print_yellow("🚀 Setting up SignalCode commit snapshots...")
-    
-    # Determine source root (one level up from COMMITS directory)
-    script_dir = Path(__file__).parent
-    src_root = script_dir.parent
-    
-    if not (src_root / "src").exists():
-        print_red("❌ Error: Could not find src directory")
-        print_red(f"   Expected at: {src_root}")
-        sys.exit(1)
-    
-    print(f"📁 Source root: {src_root}")
-    print(f"📁 COMMITS dir: {script_dir}")
-    print()
-    
-    # Create directory structure for all commits
-    print_yellow("Creating directory structures...")
-    for i in range(1, 10):
-        create_directory_structure(i)
-    print_green("✅ Directories created")
-    print()
-    
-    # Copy files for each commit
-    print_yellow("Copying files for all commits...")
-    for i in range(1, 10):
-        print(f"  Populating commit-{i}...", end=" ")
-        copy_base_files(src_root, i)
-        copy_src_files(src_root, i)
+    for filename in config_files:
+        from_file = from_dir / filename
+        to_file = to_dir / filename
         
-        # Remove files that shouldn't exist in earlier commits
-        files_to_remove = get_files_to_remove_for_commit(i)
-        remove_files_for_commit(i, files_to_remove)
-        
-        print("✅")
-    
-    print()
-    print_green("✅ Setup complete!")
-    print()
-    print("📊 Commit snapshots created:")
-    print("  commit-1 - Initial boilerplate")
-    print("  commit-2 - Theme system")
-    print("  commit-3 - i18n infrastructure")
-    print("  commit-4 - Language selector")
-    print("  commit-5 - Header restructuring")
-    print("  commit-6 - Morse-to-text reverse")
-    print("  commit-7 - Direction toggle")
-    print("  commit-8 - Bidirectional UI")
-    print("  commit-9 - Full i18n integration")
-    print()
-    print("📖 Each commit folder has README.md with details.")
-    print()
-    print("🎯 To test a commit, cd into its folder and run:")
-    print("   npm install && npm run dev")
+        if from_file.exists() and not to_file.exists():
+            shutil.copy2(from_file, to_file)
 
-def get_files_to_remove_for_commit(commit_num):
-    """Return list of files that shouldn't exist in a specific commit"""
+def setup_all_commits():
+    """Set up all 9 commits with proper file hierarchy."""
+    print("🔄 Setting up all commits...\n")
     
-    # Files added in each commit
-    commit_map = {
-        1: [],  # Commit 1 is base
-        2: ["src/components/theme-toggle.tsx"],  # Will be added in commit 2
-        3: ["src/components/theme-toggle.tsx"],
-        4: ["src/components/theme-toggle.tsx"],
-        5: ["src/components/theme-toggle.tsx"],
-        6: ["src/components/theme-toggle.tsx"],
-        7: ["src/components/theme-toggle.tsx"],
-        8: ["src/components/theme-toggle.tsx"],
-        9: ["src/components/theme-toggle.tsx"],  # Present in final
-    }
+    for commit_num in range(1, 10):
+        print(f"📦 Commit {commit_num}: {COMMITS_CONFIG[commit_num]['description']}")
+        
+        commit_dir = COMMITS_DIR / f"commit-{commit_num}"
+        commit_dir.mkdir(exist_ok=True)
+        
+        # For commits 2-9, copy from previous commit
+        if commit_num > 1:
+            prev_commit = COMMITS_CONFIG[commit_num]["copy_all_from"]
+            copy_src_files(prev_commit, commit_num)
+            copy_config_files(prev_commit, commit_num)
+            
+            # Copy package.json (might be modified)
+            prev_package = COMMITS_DIR / f"commit-{prev_commit}" / "package.json"
+            current_package = commit_dir / "package.json"
+            if prev_package.exists() and not current_package.exists():
+                shutil.copy2(prev_package, current_package)
+        
+        print()
     
-    # Files that should NOT exist before their commit
-    files_not_in_commit = {
-        1: [
-            "src/components/theme-toggle.tsx",
-            "src/context/language-context.tsx",
-            "src/config/i18n.ts",
-            "src/components/language-selector.tsx",
-            "src/components/layout/top-bar.tsx",
-            "src/lib/morse/reverse-converter.ts",
-            "src/components/translator/direction-toggle.tsx",
-        ],
-        2: [
-            "src/context/language-context.tsx",
-            "src/config/i18n.ts",
-            "src/components/language-selector.tsx",
-            "src/components/layout/top-bar.tsx",
-            "src/lib/morse/reverse-converter.ts",
-            "src/components/translator/direction-toggle.tsx",
-        ],
-        3: [
-            "src/components/language-selector.tsx",
-            "src/components/layout/top-bar.tsx",
-            "src/lib/morse/reverse-converter.ts",
-            "src/components/translator/direction-toggle.tsx",
-        ],
-        4: [
-            "src/components/layout/top-bar.tsx",
-            "src/lib/morse/reverse-converter.ts",
-            "src/components/translator/direction-toggle.tsx",
-        ],
-        5: [
-            "src/lib/morse/reverse-converter.ts",
-            "src/components/translator/direction-toggle.tsx",
-        ],
-        6: [
-            "src/components/translator/direction-toggle.tsx",
-        ],
-        7: [],  # All files present from commit 7 onwards
-        8: [],
-        9: [],
-    }
-    
-    return files_not_in_commit.get(commit_num, [])
+    print("✅ All commits set up successfully!")
+    print("\nNote: Files that are already created in their respective commits")
+    print("will not be overwritten. New and modified files should be created separately.")
 
 if __name__ == "__main__":
-    main()
+    setup_all_commits()
