@@ -1,0 +1,49 @@
+/* Light Mode Theme Variables */
+:root {
+  /* Background & Foreground */
+  --background: 0 0% 99%;
+  --foreground: 240 10% 3.9%;
+
+  /* Card */
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+
+  /* Popover */
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+
+  /* Primary - Cyan/Teal */
+  --primary: 188 100% 45%;
+  --primary-foreground: 0 0% 100%;
+
+  /* Secondary - Warm Amber */
+  --secondary: 45 100% 55%;
+  --secondary-foreground: 240 10% 3.9%;
+
+  /* Muted */
+  --muted: 240 5% 84.9%;
+  --muted-foreground: 240 5% 48%;
+
+  /* Accent - Cyan */
+  --accent: 188 100% 45%;
+  --accent-foreground: 0 0% 100%;
+
+  /* Destructive */
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+
+  /* Border & Input */
+  --border: 240 5% 89.8%;
+  --input: 240 5% 94%;
+  --ring: 188 100% 45%;
+
+  /* Radius */
+  --radius: 0.75rem;
+
+  /* Chart Colors */
+  --chart-1: 188 100% 45%;
+  --chart-2: 45 100% 55%;
+  --chart-3: 260 80% 50%;
+  --chart-4: 120 70% 50%;
+  --chart-5: 0 84% 60%;
+}
